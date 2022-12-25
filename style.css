@@ -1,0 +1,26 @@
+* {
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#use-gradient{
+    min-height: 100vh;
+    background: #dde5b6;
+    background: linear-gradient(120deg, #f6fff8 0%, #cce3de 100%); 
+}
+
+p,
+#select-gradient{
+    margin: 0.5rem 1rem;
+}
+
+select:required:invalid {
+    color: #666;
+}
+option[value=""][disabled] {
+    display: none;
+}
+option {
+    color: #000;
+}
