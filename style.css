@@ -1,26 +1,116 @@
-* {
-   margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --color1: #a53860;
+    --color2: #450920;
+    --gray: #212121;
+    --conatiner-height: 25rem;
+    --conatiner-width: 20rem;
+    --image-placeholder-dim: 5rem;
 }
 
-#use-gradient{
-    min-height: 100vh;
-    background: #dde5b6;
-    background: linear-gradient(120deg, #f6fff8 0%, #cce3de 100%); 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#use-gradient > p {
+    color:wheat
+}
+
+body {
+    background: var(--color2);
+    padding: 0;
+    margin: 0;
+}
+
+#use-gradient {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--color1);
+    background: linear-gradient(180deg, var(--color1) 0%, var(--color2) 100%); 
 }
 
 p,
-#select-gradient{
+#select-gradient {
     margin: 0.5rem 1rem;
 }
 
-select:required:invalid {
-    color: #666;
+.parent-container {
+    margin: 0.5rem;
+    padding: 0.1rem;
+    border: 1px solid black;
+    height: var(--conatiner-height);
+    width: var(--conatiner-width);
+    border-radius: 0.3rem;
+    background-color: #000000;
+    
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.6fr 1.4fr; 
+    grid-template-areas: 
+        "container-section1"
+        "container-section2"; 
 }
-option[value=""][disabled] {
-    display: none;
+
+.container-section1 {
+    border: 1px solid white;
+    padding: 0.5rem;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    /* display: flex; */
+    justify-content: left;
+    align-items: center;
+    background-color: var(--gray);
+    color: white;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
+    grid-area: container-section1;
 }
-option {
-    color: #000;
+
+.image-placeholder{
+    height: var(--image-placeholder-dim);
+    width: var(--image-placeholder-dim);
+    display: flex;
 }
+
+.song-title {
+    color: #a53860;
+    /* font-weight: ; */
+}
+
+.song-artist {
+    color: #a53860;
+}
+
+.song-album {
+    color: #a53860;
+}
+
+
+.container-section2{
+    border: 1px solid white;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    background-color: var(--gray);
+    color: white;
+    overflow: scroll;
+    grid-area: container-section2; 
+}
+
+.playlist-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
