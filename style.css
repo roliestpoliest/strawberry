@@ -45,12 +45,12 @@ body {
 .parent-container {
     margin: 0.5rem;
     padding: 0.1rem;
-    width: 100%;
     border: 1px solid black;
     height: var(--conatiner-height);
-    width: var(--conatiner-width);
+    width: calc(25vw - 1.02rem);
     border-radius: 0.3rem;
     background-color: #000000;
+    float: left;
     
     display: grid; 
     grid-template-columns: 1fr; 
@@ -113,6 +113,7 @@ body {
     overflow: scroll;
     grid-area: container-section2; 
     align-content: center;
+    text-align: center;
 }
 
 .input-title,
@@ -129,13 +130,16 @@ textarea{
 }
 
 #playlist-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+    margin: auto;
+    float: left;
 }
 
 button {
     height: 10%;
     width: 66%;
+    margin: auto;
 }

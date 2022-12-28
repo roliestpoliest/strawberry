@@ -10,18 +10,17 @@ const inputAlbum = document.querySelector(".input-album");
 const inputLyrics = document.querySelector(".input-lyrics");
 const submitButton = document.querySelector(".submit-button");
 
+var songCount = 1;
 inputTitle.focus();
 
 // event listeners
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 submitButton.addEventListener("click", addSong);
-inputTitle.addEventListener("keypress", function(event) {
-    if (event.key == "Enter"){
-        event.preventDefault();
-        addSong(event);
-    }
-});
+inputTitle.addEventListener("keypress", submitWithEnter);
+inputArtist.addEventListener("keypress", submitWithEnter);
+inputAlbum.addEventListener("keypress", submitWithEnter);
+inputLyrics.addEventListener("keypress", submitWithEnter);
 
 // functions
 function setGradient(event){
@@ -32,7 +31,13 @@ function setGradient(event){
     document.body.style.backgroundColor = color2.value;
 }
 
-var songCount = 1;
+function submitWithEnter(event){
+    if (event.key == "Enter"){
+        event.preventDefault();
+        addSong(event);
+    }
+}
+
 function addSong(event){
     event.preventDefault();
     console.log(songCount + '. hello');
@@ -40,6 +45,7 @@ function addSong(event){
 
     if(!inputTitle.value){
         document.getElementsByName("input-title")[0].placeholder = "input cannot be empty";
+        inputTitle.focus();
         return;
     }
     document.getElementsByName("input-title")[0].placeholder = "title";
